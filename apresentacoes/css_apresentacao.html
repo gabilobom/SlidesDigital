@@ -53,18 +53,23 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <h1>CSS: Cascading Style Sheets</h1>
-                <p>Uma introdução completa</p>
+                <h1 style="display: flex; align-items: center; justify-content: center; gap: 30px;">
+                    CSS: <br> Cascading Style Sheets
+                    <img src="https://storage.googleapis.com/dpw/app/uploads/2020/10/css-cascata-cascade-family-guy.gif"
+                        alt="CSS Cascata" style="max-width:300px; border-radius:10px; margin-left:30px;">
+                </h1>
             </section>
             <section>
                 <h2>O que é CSS?</h2>
-                <ul>
-                    <li>Folhas de estilo em cascata</li>
-                    <li>Usado para estilizar elementos HTML</li>
-                    <li>Separa estrutura (HTML) da apresentação (CSS)</li>
-                </ul>
-                <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" alt="CSS animado"
-                    style="max-width:180px; border-radius:10px; float:right; margin-left:30px;">
+                <div style="display: flex; align-items: center; gap: 40px;">
+                    <ul style="margin:0;">
+                        <li>Folhas de estilo em cascata</li>
+                        <li>Usado para estilizar elementos HTML</li>
+                        <li>Separa estrutura (HTML) da apresentação (CSS)</li>
+                    </ul>
+                    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzZ6MzE0MTVsY2RlMmZ6YjZrN3RhaDg4MmtkZ3pndnh5eXhlcDV2ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fuJPZBIIqzbt1kAYVc/giphy.gif"
+                        alt="CSS animado" style="max-width:280px; border-radius:10px;">
+                </div>
             </section>
             <section>
                 <h2>Tipos de CSS</h2>
@@ -73,36 +78,121 @@
                     <li><b>Interno:</b> dentro da tag &lt;style&gt; no HTML</li>
                     <li><b>Externo:</b> em um arquivo .css separado</li>
                 </ul>
-                <pre><code>&lt;p style="color: red;"&gt;Texto inline&lt;/p&gt;</code></pre>
+                <pre><code>&lt;p style="color: red;"&gt;Texto inline&lt;/p&gt;
+
+&lt;!-- Interno --&gt;
+&lt;style&gt;
+  p { color: blue; }
+&lt;/style&gt;
+&lt;p&gt;Texto interno&lt;/p&gt;
+
+&lt;!-- Externo --&gt;
+&lt;link rel="stylesheet" href="estilos.css"&gt;
+&lt;p&gt;Texto externo&lt;/p&gt;
+</code></pre>
             </section>
             <section>
                 <h2>Seletores CSS</h2>
-                <ul>
-                    <li>Elementos: <code>p</code>, <code>h1</code></li>
-                    <li>Classes: <code>.botao</code></li>
-                    <li>IDs: <code>#cabecalho</code></li>
-                    <li>Atributos: <code>[type="text"]</code></li>
-                    <li>Pseudo-classes: <code>:hover</code>, <code>:first-child</code></li>
-                </ul>
+                <div style="display: flex; align-items: center; gap: 40px;">
+                    <ul style="margin:0;">
+                        <li><span style="color:#2980b9"><b>Elementos:</b></span> <code style="color:#2980b9">p</code>,
+                            <code style="color:#2980b9">h1</code></li>
+                        <li><span style="color:#27ae60"><b>Classes:</b></span> <code style="color:#27ae60">.botao</code>
+                        </li>
+                        <li><span style="color:#e67e22"><b>IDs:</b></span> <code style="color:#e67e22">#cabecalho</code>
+                        </li>
+                        <li><span style="color:#8e44ad"><b>Atributos:</b></span> <code
+                                style="color:#8e44ad">[type="text"]</code></li>
+                        <li><span style="color:#c0392b"><b>Pseudo-classes:</b></span> <code
+                                style="color:#c0392b">:hover</code>, <code style="color:#c0392b">:first-child</code>
+                        </li>
+                    </ul>
+                    <img src="https://d2uusema5elisf.cloudfront.net/courses/30-days-of-webdev/day-12/public/assets/rankings.png"
+                        alt="CSS Seletores" style="max-width:300px; border-radius:10px;">
+                </div>
             </section>
             <section>
                 <h2>Box Model</h2>
-                <img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model/box-model.png"
-                    width="60%">
-                <p><small>Content → Padding → Border → Margin</small></p>
+                <a href="https://media.gcflearnfree.org/content/5ef2084faaf0ac46dc9c10be_06_23_2020/box_model.png"
+                    target="_blank">
+                    <img src="https://media.gcflearnfree.org/content/5ef2084faaf0ac46dc9c10be_06_23_2020/box_model.png"
+                        width="40%" style="vertical-align:middle; cursor: zoom-in;" alt="Box Model">
+                </a>
+                <p style="font-size: 0.8em;">
+                    <b>Box Model</b> define como o espaço de cada elemento é calculado:<br>
+                    <b>Content</b> (conteúdo) → <b>Padding</b> (preenchimento)<br><b>Border</b> (borda) → <b>Margin</b>
+                    (margem externa).<br>
+                    Isso permite controlar espaçamento, bordas e o layout dos elementos na página.
+                </p>
+            </section>
+            <section>
+                <h2>Tamanhos em CSS</h2>
+                <ul>
+                    <li><b>px</b> — pixels (valor fixo, não responsivo)</li>
+                    <li><b>%</b> — porcentagem em relação ao elemento pai</li>
+                    <li><b>em/rem</b> — relativo ao tamanho da fonte</li>
+                    <li><b>vw/vh</b> — porcentagem da largura/altura da tela</li>
+                </ul>
+                <pre><code>div {
+  width: 50%;   /* metade do elemento pai */
+  height: 200px; /* altura fixa */
+}
+
+h1 {
+  font-size: 2em; /* 2x o tamanho da fonte do elemento pai */
+}
+
+section {
+  width: 80vw; /* 80% da largura da tela */
+}
+</code></pre>
+                <p style="font-size:0.9em;">Use <b>%</b> para layouts flexíveis e responsivos!</p>
             </section>
             <section>
                 <h2>Propriedades comuns</h2>
-                <ul>
-                    <li><code>color</code>, <code>background-color</code></li>
-                    <li><code>font-size</code>, <code>font-family</code></li>
-                    <li><code>width</code>, <code>height</code></li>
-                    <li><code>margin</code>, <code>padding</code>, <code>border</code></li>
-                    <li><code>display</code>, <code>position</code></li>
-                </ul>
+                <div style="display: flex; margin-left: 50px; align-items: center; ">
+                    <pre style="margin:0;"><code>/* Cor do texto e fundo */
+color: red;
+background-color: #f8f8f5;
+
+/* Fonte */
+font-size: 20px;
+font-family: Arial, sans-serif;
+
+/* Tamanho */
+width: 200px;
+height: 100px;
+
+/* Espaçamento */
+margin: 10px;
+padding: 20px;
+border: 1px solid #222;
+
+/* Layout */
+display: flex;
+position: absolute;
+
+/* Sombra e borda arredondada */
+box-shadow: 0 2px 8px #0003;
+border-radius: 8px;
+
+/* Opacidade e ordem */
+opacity: 0.8;
+z-index: 10;
+
+/* Overflow e alinhamento de texto */
+overflow: hidden;
+text-align: center;
+
+/* Cursor e transição */
+cursor: pointer;
+transition: background 0.3s;
+</code></pre>
+                </div>
             </section>
             <section>
                 <h2>Pseudo-classes: <code>:hover</code></h2>
+
                 <pre><code>button:hover {
   background-color: green;
   color: white;
@@ -120,7 +210,11 @@ div:hover {
                 <p>Transições suaves entre estados</p>
             </section>
             <section>
-                <h2>Animations</h2>
+                <img src="https://www.dreamhost.com/blog/wp-content/uploads/2023/04/CSS-Button-Animation.gif"
+                    alt="Exemplo de animação CSS"
+                    style="max-width:300px; border-radius:10px; display:flex; position: absolute; margin-left: 700px; z-index: 9999; margin-top: 20px;">
+                <h2>Animations
+                </h2>
                 <pre><code>@keyframes mover {
   from { transform: translateX(0); }
   to { transform: translateX(100px); }
@@ -132,7 +226,10 @@ div:hover {
                 <p>Criação de movimentos animados</p>
             </section>
             <section>
-                <h2>Flexbox</h2>
+                <h2 style="text-align: start; margin-left: 50px;">Flexbox</h2>
+                <img src="https://cdn-media-1.freecodecamp.org/images/6WwoIEc45lUHUcFQCmD8GmziiISm2lO64Y1-"
+                    alt="Flexbox exemplo"
+                    style="position: absolute; top: 20px; right: 40px; max-width: 350px; border-radius: 8px; box-shadow: 0 2px 8px #0002; z-index: 999;">
                 <pre><code>.container {
   display: flex;
   justify-content: space-between;
@@ -141,7 +238,10 @@ div:hover {
                 <p>Layout flexível e responsivo</p>
             </section>
             <section>
-                <h2>Grid</h2>
+                <h2 style="text-align: start; margin-left: 50px;">Grid</h2>
+                <img src="https://miro.medium.com/v2/resize:fit:1400/0*zF54G2_cLwYLyNh-.gif"
+                    alt="Grid exemplo"
+                    style="position: absolute; top: 20px; right: 40px; max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px #0002; z-index: 999;">
                 <pre><code>.container {
   display: grid;
   grid-template-columns: 1fr 2fr;
