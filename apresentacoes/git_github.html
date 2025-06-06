@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aprendendo Git e GitHub</title>
+    <link rel="stylesheet" href="../dist/reset.css">
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/black.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+    <style>
+        .reveal,
+        .reveal .slides,
+        .reveal section,
+        .reveal p,
+        .reveal li,
+        .reveal h1,
+        .reveal h2,
+        .reveal h3,
+        .reveal h4,
+        .reveal h5,
+        .reveal h6,
+        .reveal table,
+        .reveal th,
+        .reveal td {
+            color: #222 !important;
+        }
+
+        .reveal section {
+            font-size: 0.8em;
+            max-width: 900px;
+            margin: 0 auto;
+            word-break: break-word;
+            box-sizing: border-box;
+            padding: 30px 40px;
+        }
+
+        .reveal ul,
+        .reveal ol {
+            max-width: 100%;
+            word-break: break-word;
+        }
+
+        .reveal pre code {
+            font-size: 0.85em;
+            word-break: break-all;
+        }
+
+        .comandos-git {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 40px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #f8f8f5; color: #222;">
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1 -->
+            <section>
+                <h1>Git e GitHub</h1>
+            </section>
+            <!-- Slide 2 -->
+            <section>
+                <h2>O que é Git? <img src="https://img.icons8.com/?size=100&id=20906&format=png&color=000000"
+                        alt="Logo do Git" style="display:inline; margin:20px 0px 0px auto; max-width:60px;">
+                </h2>
+                <img src="https://64.media.tumblr.com/c9387163eae1eefb98302c669823963b/tumblr_osrhwqOvnC1vbcnq8o1_500.gif"
+                    alt="Gif engraçado Git" style="max-width:200px; border-radius:10px; margin-left:30px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="flex: 1;">
+                        <p>Git é um programa que guarda cópias do seu trabalho no computador.</p>
+                        <p>Se você errar, pode voltar para uma versão antiga.</p>
+                        <p>Ajuda a não perder nada do que você fez.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Slide 3 -->
+            <section>
+                <h2>Git x GitHub</h2>
+                <img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" alt="Alívio"
+                    style="position: absolute; margin: -50px 0px 0px 350px; max-width:180px; border-radius:10px;">
+                <div
+                    style="display: flex; justify-content: center; align-items: center; gap: 60px; margin-bottom: 20px;">
+                    <img src="https://img.icons8.com/?size=100&id=20906&format=png&color=000000" alt="Logo do Git"
+                        style="max-width:70px; max-height:70px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Logo do GitHub"
+                        style="max-width:70px; max-height:70px;">
+                </div>
+                <table style="width:100%; font-size:0.8em">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;">Git</th>
+                            <th style="text-align:center;">GitHub</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align:center;">Programa instalado no computador</td>
+                            <td style="text-align:center;">Site na internet</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">Guarda cópias do seu trabalho</td>
+                            <td style="text-align:center;">Guarda seu trabalho online</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">Ajuda a não perder nada</td>
+                            <td style="text-align:center;">Permite acessar de qualquer lugar</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">Funciona mesmo sem internet</td>
+                            <td style="text-align:center;">Precisa de internet para acessar</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">Você salva (commit) no seu PC</td>
+                            <td style="text-align:center;">Você envia (push) para o site</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top:1em; text-align:center;">Git é onde você trabalha. GitHub é onde você compartilha.
+                </p>
+            </section>
+            <!-- Slide 4 -->
+            <section>
+                <h2>Por que usar?</h2>
+                <img src="https://cdn.dicionariopopular.com/imagens/anira.gif" alt="Alívio"
+                    style="position: absolute; margin: -50px 0px 0px 350px; max-width:180px; border-radius:10px;">
+                <div
+                    style="display: flex; justify-content: center; align-items: center; gap: 60px; margin-bottom: 20px;">
+                    <ul>
+                        <li>Não perde o que fez</li>
+                        <li>Pode voltar atrás se errar</li>
+                        <li>Pode trabalhar junto com amigos</li>
+                        <li>Seu trabalho fica salvo na internet</li>
+                    </ul>
+            </section>
+            <!-- Slide 5 -->
+            <section>
+                <h2>Como funciona?</h2>
+                <ol>
+                    <li>Você faz uma mudança no seu trabalho</li>
+                    <li>Salva essa mudança (isso se chama "commit")</li>
+                    <li>Envia para o GitHub (isso se chama "push")</li>
+                    <li>Pode pegar mudanças novas do GitHub (isso se chama "pull")</li>
+                </ol>
+            </section>
+            <!-- Slide 6 -->
+            <section>
+                <h2>Palavras importantes</h2>
+                <ul>
+                    <li><b>Commit</b>: Salvar o que fez</li>
+                    <li><b>Push</b>: Enviar para o GitHub</li>
+                    <li><b>Pull</b>: Pegar do GitHub</li>
+                    <li><b>Branch</b>: Linha separada para testar coisas</li>
+                    <li><b>Merge</b>: Juntar as linhas</li>
+                </ul>
+            </section>
+            <!-- Slide 7 -->
+            <section>
+                <h2>Passos simples</h2>
+                <ol>
+                    <li>Fazer um projeto</li>
+                    <li>Fazer mudanças</li>
+                    <li>Salvar (commit)</li>
+                    <li>Enviar para o GitHub (push)</li>
+                </ol>
+            </section>
+            <!-- Slide 7B -->
+            <section>
+                <h2>Está­gios dos arquivos no Git</h2>
+                <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*DLhQtiz9w2NejoHU.png"
+                    alt="Estados do Git" style="display:block; margin: 20px auto; max-width:900px; border-radius:10px;">
+            </section>
+            <!-- Slide 7C -->
+            <section>
+                <h2>O que significam os estágios?</h2>
+                <ul>
+                    <li><b>Untracked</b>: Arquivo novo, o Git ainda não está cuidando dele.</li>
+                    <li><b>Modified</b>: Arquivo já conhecido pelo Git, mas foi alterado e ainda não está pronto para
+                        salvar.</li>
+                    <li><b>Staged</b>: Arquivo pronto para ser salvo (commit), já foi adicionado com
+                        <code>git add</code>.
+                    </li>
+                    <li><b>Unmodified</b>: Arquivo já salvo, sem mudanças desde o último commit.</li>
+                </ul>
+                <p style="margin-top:1em;">O ciclo normal é: <b>Untracked → Staged → Committed (Unmodified)</b>. Se
+                    mudar de novo, volta para <b>Modified</b>.</p>
+            </section>
+            <!-- Slide 8 -->
+            <section>
+                <h2>Comandos mais usados</h2>
+                <div style="display: flex; align-items: flex-start; gap: 40px;">
+                    <pre
+                        style="flex: 0 0 270px; max-width: 400px; font-size: 0.6em; margin: 0; background: #f3f3f3; border-radius: 8px; box-shadow: 0 2px 8px #0001;"><code>
+git init      (começa a usar o Git)
+git add .     (prepara tudo para salvar)
+git commit -m "mensagem" (salva)
+git push      (envia para o GitHub)
+git pull      (pega do GitHub)
+</code></pre>
+                    <img src="https://hermes.dio.me/assets/articles/1a1cf033-ae28-4d7c-b904-a54a2c481b2f.jpg"
+                        id="img-comandos-git"
+                        style="max-width:350px; border-radius:10px; margin-left: 20px; cursor: zoom-in; transition: 0.2s;">
+                </div>
+            </section>
+            <script>
+                // Função para ampliar a imagem ao clicar
+                (function () {
+                    const img = document.getElementById('img-comandos-git');
+                    let zoomed = false;
+                    if (!img) return;
+                    img.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        if (!zoomed) {
+                            img.classList.add('zoomed');
+                            img.style.position = 'fixed';
+                            img.style.zIndex = '9999';
+                            img.style.maxHeight = '500px';
+                            img.style.maxWidth = '1200px';
+                            img.style.width = '700px';
+                            img.style.height = '900px';
+                            img.style.left = '50%';
+                            img.style.top = '50%';
+                            img.style.transform = 'translate(-50%, -50%)';
+                            img.style.boxShadow = '0 0 40px #0008';
+                            img.style.background = '#fff';
+                            img.style.cursor = 'zoom-out';
+                            zoomed = true;
+                        } else {
+                            img.classList.remove('zoomed');
+                            img.style.position = '';
+                            img.style.zIndex = '';
+                            img.style.maxWidth = '350px';
+                            img.style.width = '';
+                            img.style.height = '';
+                            img.style.left = '';
+                            img.style.top = '';
+                            img.style.transform = '';
+                            img.style.boxShadow = '';
+                            img.style.background = '';
+                            img.style.cursor = 'zoom-in';
+                            zoomed = false;
+                        }
+                    });
+                    document.addEventListener('click', function (e) {
+                        if (zoomed && e.target !== img) {
+                            img.classList.remove('zoomed');
+                            img.style.position = '';
+                            img.style.zIndex = '';
+                            img.style.maxWidth = '350px';
+                            img.style.width = '';
+                            img.style.height = '';
+                            img.style.left = '';
+                            img.style.top = '';
+                            img.style.transform = '';
+                            img.style.boxShadow = '';
+                            img.style.background = '';
+                            img.style.cursor = 'zoom-in';
+                            zoomed = false;
+                        }
+                    });
+                })();
+            </script>
+            <!-- Slide 8A -->
+            <section>
+                <h2>Vamos praticar!</h2>
+                <p>Vamos tentar juntos no computador.</p>
+                <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Mão no teclado"
+                    style="display:block; margin: 30px auto 0 auto; max-width:300px; border-radius:10px;">
+            </section>
+            <!-- Slide 8B -->
+            <section style="font-size: 0.5em;">
+                <h2>Atividade prática: Subindo um site no GitHub</h2>
+                <ol style="font-size:1.1em; max-width:700px; margin:0 auto 20px auto;">
+                    <li><b>Crie um arquivo HTML simples</b><br>
+                        Exemplo: <code>index.html</code> com <code>&lt;h1&gt;Olá, GitHub!&lt;/h1&gt;</code>
+                    </li>
+                    <li><b>Abra o terminal na pasta do arquivo</b></li>
+                    <li><b>Inicie o Git</b><br>
+                        <code>git init</code>
+                    </li>
+                    <li><b>Adicione o arquivo para controle do Git</b><br>
+                        <code>git add index.html</code>
+                    </li>
+                    <li><b>Salve a mudança (commit)</b><br>
+                        <code>git commit -m "meu primeiro site"</code>
+                    </li>
+                    <li><b>Crie um repositório novo no GitHub</b><br>
+                        (No site do GitHub, clique em <b>New</b> e siga os passos)
+                    </li>
+                    <li><b>Ligue seu projeto local ao GitHub</b><br>
+                        <code>git remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPO.git</code>
+                    </li>
+                    <li><b>Envie seu arquivo para o GitHub</b><br>
+                        <code>git push -u origin main</code> <br>
+                        (ou <code>git push -u origin master</code> se for esse o nome do branch)
+                    </li>
+                    <li><b>Veja seu arquivo no GitHub!</b></li>
+                </ol>
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2J6b2J6d2F2d3F2d3F2d3F2d3F2d3F2d3F2d3F2d3F2d3F2/g9582DNuQppxC/giphy.gif"
+                    alt="Sucesso!"
+                    style="position: absolute; margin: 20px auto 0px auto; max-width:300px; border-radius:10px;">
+            </section>
+            <!-- Slide 9 -->
+            <section>
+                <h2>Trabalhando em grupo</h2>
+                <p>Cada pessoa pode ter uma cópia do projeto.</p>
+                <p>Todos podem fazer mudanças e depois juntar tudo.</p>
+                <p>Assim, ninguém perde o trabalho do outro.</p>
+            </section>
+            <!-- Slide 10 -->
+            <section>
+                <h2>O que é uma Branch?</h2>
+                <p>É como uma estrada separada para testar ideias.</p>
+                <p>Se der certo, junta com o projeto principal.</p>
+                <p>Se não der, não atrapalha o resto.</p>
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWI4MjI3MDIxNWEwNWU3NWIyZjA1NjMyMmNiOWQyZWRjNjliMjY3NyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/7whm31rMz0t9yB42Tp/giphy.gif"
+                    alt="Galhos animados"
+                    style="display:block; margin: 30px auto 0 auto; max-width:500px; border-radius:10px;">
+            </section>
+            <!-- Slide 12 -->
+            <section>
+                <h2>Visualizando uma Branch</h2>
+                <p style="font-size: 0.5em;">Imagine cada branch como um caminho diferente no seu projeto. Você pode
+                    criar, mudar e juntar esses caminhos!</p>
+                <img src="https://miro.medium.com/v2/resize:fit:862/1*9Mj5Ap8HSlor8P0DGlWrzg.png"
+                    alt="Exemplo visual de branch"
+                    style="display:block; margin: 30px auto 0 auto; max-width:800px; border-radius:10px; box-shadow:0 2px 16px #0002;">
+            </section>
+
+            <!-- Slide 9A -->
+            <section>
+                <h2>git status</h2>
+                <p>Mostra o que mudou e o que falta salvar.</p>
+                <pre><code>git status</code></pre>
+                <p><b>Exemplo:</b> Veja se há arquivos novos ou modificados antes de salvar.</p>
+            </section>
+            <section>
+                <h2>git log</h2>
+                <p>Mostra a lista de tudo que já foi salvo (commits).</p>
+                <pre><code>git log</code></pre>
+                <p><b>Exemplo:</b> Veja o histórico de mudanças do projeto.</p>
+            </section>
+            <section>
+                <h2>git diff</h2>
+                <p>Mostra as diferenças entre arquivos ou versões.</p>
+                <pre><code>git diff</code></pre>
+                <p><b>Exemplo:</b> Veja o que mudou antes de salvar (commit).</p>
+            </section>
+            <section>
+                <h2>git checkout</h2>
+                <p>Troca de branch ou recupera arquivo antigo.</p>
+                <pre><code>git checkout nome-da-branch</code></pre>
+                <p><b>Exemplo:</b> Mude para outro "galho":<br> <code>git checkout main</code><br>
+                    <code>git checkout {nome-da-branch}</code>
+                </p>
+                <pre><code>git checkout -b nome-da-branch</code></pre>
+                <p><b>Exemplo:</b> Crie e Mude para outra "galho"<br>
+            </section>
+            <section>
+                <h2>git branch</h2>
+                <p>Mostra ou cria novas linhas de trabalho (branches).</p>
+                <pre><code>git branch</code></pre>
+                <p><b>Exemplo:</b> Veja todas as branches do projeto.</p>
+                <pre><code>git branch nova-ideia</code></pre>
+                <p><b>Exemplo:</b> Crie uma nova branch chamada "nova-ideia".</p>
+            </section>
+            <section>
+                <h2>git rm</h2>
+                <p>Remove arquivos do controle do Git.</p>
+                <pre><code>git rm arquivo.txt</code></pre>
+                <p><b>Exemplo:</b> Remova o arquivo "arquivo.txt" do projeto.</p>
+            </section>
+            <section>
+                <h2>git reset</h2>
+                <p>Desfaz mudanças que ainda não foram salvas.</p>
+                <pre><code>git reset arquivo.txt</code></pre>
+                <p><b>Exemplo:</b> Desfaça mudanças feitas no arquivo "arquivo.txt" antes de salvar (commit).</p>
+            </section>
+            <!-- Slide 13 -->
+            <section>
+                <h2>Resumo</h2>
+                <p>Git guarda seu trabalho no computador.</p>
+                <p>GitHub guarda seu trabalho na internet.</p>
+                <p>Você pode trabalhar sozinho ou com amigos.</p>
+                <p>Se errar, pode voltar atrás.</p>
+                <img src="https://cdn.dicionariopopular.com/imagens/menino-russo-dancando.gif" alt="Sucesso!"
+                    style="display:block; margin: 30px auto 0 auto; max-width:300px; border-radius:10px;">
+            </section>
+            <section>
+                <h1>FIM!</h1>
+            </section>
+        </div>
+    </div>
+    <script src="../dist/reveal.js"></script>
+    <script src="../plugin/notes/notes.js"></script>
+    <script src="../plugin/markdown/markdown.js"></script>
+    <script src="../plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+</body>
+
+</html>
